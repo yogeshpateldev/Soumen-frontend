@@ -4,10 +4,10 @@ import { Menu, X } from "lucide-react";
 // import { ServerStatus } from "./ServerStatus";
 
 const nav = [
-  { to: "/", label: "Home" },
-  { to: "/ventures", label: "Ventures" },
-  { to: "/journey", label: "Journey" },
-  { to: "/speaking", label: "Speaking" },
+  { to: "/", hash: undefined, label: "Home" },
+  { to: "/", hash: "ventures", label: "Ventures" },
+  { to: "/", hash: "journey", label: "Journey" },
+  { to: "/", hash: "insights", label: "Insights" },
 ] as const;
 
 export function SiteHeader() {
@@ -30,17 +30,18 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
             <Link
-              key={n.to}
+              key={n.label}
               to={n.to}
+              hash={n.hash}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
-              activeOptions={{ exact: n.to === "/" }}
+              activeOptions={{ exact: n.hash === undefined }}
             >
               {n.label}
             </Link>
           ))}
           <Link
-            to="/speaking"
+            to="/contact"
             className="rounded-sm bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
             Get in touch
@@ -60,16 +61,24 @@ export function SiteHeader() {
         <nav className="flex flex-col gap-1 border-t border-border/60 px-6 py-4 md:hidden">
           {nav.map((n) => (
             <Link
-              key={n.to}
+              key={n.label}
               to={n.to}
+              hash={n.hash}
               onClick={() => setOpen(false)}
               className="py-2 text-sm font-medium text-muted-foreground"
               activeProps={{ className: "text-primary" }}
-              activeOptions={{ exact: n.to === "/" }}
+              activeOptions={{ exact: n.hash === undefined }}
             >
               {n.label}
             </Link>
           ))}
+          <Link
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className="mt-2 text-center rounded-sm bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Get in touch
+          </Link>
         </nav>
       )}
     </header>

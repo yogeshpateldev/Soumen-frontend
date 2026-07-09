@@ -15,9 +15,10 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-2 text-sm text-primary-foreground/80">
           <span className="eyebrow mb-2 text-accent">Navigate</span>
-          <Link to="/ventures" className="hover:text-accent">Ventures</Link>
-          <Link to="/journey" className="hover:text-accent">Journey</Link>
-          <Link to="/speaking" className="hover:text-accent">Speaking &amp; Press</Link>
+          <Link to="/" hash="ventures" className="hover:text-accent">Ventures</Link>
+          <Link to="/" hash="journey" className="hover:text-accent">Journey</Link>
+          <Link to="/" hash="insights" className="hover:text-accent">Insights &amp; Activity</Link>
+          <Link to="/contact" className="hover:text-accent">Get in Touch</Link>
         </div>
 
         <div className="flex flex-col gap-3 text-sm">
