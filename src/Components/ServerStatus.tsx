@@ -14,10 +14,17 @@ export function ServerStatus() {
           signal: controller.signal,
         });
         clearTimeout(id);
-        if (!res.ok) {
-          throw new Error("API status check failed");
+        
+        const contentType = res.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          const data = await res.json();
+          if (!res.ok) {
+            throw new Error("API status check failed");
+          }
+          return data;
+        } else {
+          throw new Error(`Server returned non-JSON health response (${res.status})`);
         }
-        return await res.json();
       } catch (err) {
         clearTimeout(id);
         throw err;

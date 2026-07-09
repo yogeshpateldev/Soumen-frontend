@@ -56,7 +56,15 @@ function Contact() {
       });
 
       clearTimeout(timeoutId);
-      const data = await res.json();
+      
+      let data: any = {};
+      const contentType = res.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        data = await res.json();
+      } else {
+        const text = await res.text();
+        throw new Error(`Server error (${res.status}): ${text.slice(0, 100) || res.statusText}`);
+      }
 
       if (!res.ok) {
         throw new Error(data.error || "Failed to send message.");
