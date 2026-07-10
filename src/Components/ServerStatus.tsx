@@ -50,34 +50,34 @@ export function ServerStatus() {
   };
 
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs font-medium backdrop-blur-sm transition-all duration-300">
+    <div className="inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/35 px-3 py-1 text-[11px] font-medium backdrop-blur-md transition-all duration-300 shadow-sm">
       {isLoading ? (
         <>
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-muted-foreground/40 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-muted-foreground/60"></span>
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-muted-foreground/30 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-muted-foreground/50"></span>
           </span>
-          <span className="text-muted-foreground/80">Checking API...</span>
+          <span className="text-muted-foreground/80 tracking-wide font-sans">Checking API...</span>
         </>
       ) : isOnline ? (
         <>
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500/40 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
           </span>
-          <span className="text-muted-foreground flex items-center gap-1">
-            API Online
-            <span className="text-[10px] opacity-60">({getPort()})</span>
+          <span className="text-muted-foreground font-sans tracking-wide flex items-center gap-1.5">
+            API Active
+            <span className="text-[9px] opacity-40 font-mono">({getPort()})</span>
           </span>
         </>
       ) : (
         <>
-          <span className="relative flex h-2 w-2">
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-destructive"></span>
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-destructive/80"></span>
           </span>
-          <span className="text-destructive font-semibold flex items-center gap-1">
-            <WifiOff size={10} />
-            API Offline
+          <span className="text-destructive/95 font-semibold font-sans tracking-wide flex items-center gap-1">
+            <WifiOff size={9} />
+            API Connection Error
           </span>
         </>
       )}

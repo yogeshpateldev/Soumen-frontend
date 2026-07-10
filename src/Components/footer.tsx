@@ -1,38 +1,40 @@
 import { Link } from "@tanstack/react-router";
-import { X, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/60 bg-primary text-primary-foreground">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
-        <div>
-          <div className="font-serif text-2xl">Soumen Bhatta</div>
-          <p className="mt-3 max-w-xs text-sm text-primary-foreground/70">
-            Founder & Group CEO building worker-first beauty & wellness marketplaces
-            across India.
+    <footer className="border-t border-border/40 bg-background/50 text-muted-foreground">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-3">
+        <div className="space-y-4">
+          <div className="font-serif text-2xl font-semibold text-primary">Soumen Bhatta</div>
+          <p className="max-w-xs text-sm leading-relaxed text-muted-foreground/80">
+            Founder &amp; Group CEO building worker-first beauty &amp; wellness marketplaces across India.
           </p>
         </div>
 
-        <div className="flex flex-col gap-2 text-sm text-primary-foreground/80">
-          <span className="eyebrow mb-2 text-accent">Navigate</span>
-          <Link to="/" hash="ventures" className="hover:text-accent">Ventures</Link>
-          <Link to="/" hash="journey" className="hover:text-accent">Journey</Link>
-          <Link to="/" hash="insights" className="hover:text-accent">Insights &amp; Activity</Link>
-          <Link to="/contact" className="hover:text-accent">Get in Touch</Link>
+        <div className="flex flex-col gap-2.5 text-sm">
+          <span className="eyebrow mb-2">Navigate</span>
+          <Link to="/" hash="ventures" className="hover:text-accent transition-colors duration-300">Ventures</Link>
+          <Link to="/" hash="journey" className="hover:text-accent transition-colors duration-300">Journey</Link>
+          <Link to="/" hash="insights" className="hover:text-accent transition-colors duration-300">Insights &amp; Activity</Link>
+          <Link to="/contact" className="hover:text-accent transition-colors duration-300">Get in Touch</Link>
         </div>
 
         <div className="flex flex-col gap-3 text-sm">
-          <span className="eyebrow mb-2 text-accent">Connect</span>
-          <a href="mailto:careers@atomaindia.com" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent">
-            <Mail size={16} /> careers@atomaindia.com
+          <span className="eyebrow mb-2">Connect</span>
+          <a href="mailto:careers@atomaindia.com" className="flex items-center gap-2 hover:text-accent transition-colors duration-300">
+            <Mail size={15} className="text-accent" /> careers@atomaindia.com
           </a>
-          <div className="flex gap-4 pt-1 text-primary-foreground/80">
-            {/* <a href="#" aria-label="LinkedIn" className="hover:text-accent"><Linkedin size={18} /></a> */}
-            <a href="#" aria-label="Twitter" className="hover:text-accent"><X size={18} /></a>
+          <div className="flex gap-4 pt-2 text-muted-foreground/80">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent transition-colors duration-300">
+              <svg className="h-[18px] w-[18px] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-      <div className="border-t border-primary-foreground/10 py-5 text-center text-xs text-primary-foreground/50">
+      <div className="border-t border-border/20 py-6 text-center text-xs text-muted-foreground/45">
         © {new Date().getFullYear()} Soumen Bhatta. All rights reserved.
       </div>
     </footer>
