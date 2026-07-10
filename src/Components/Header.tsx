@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { ServerStatus } from "./ServerStatus";
+// import { ServerStatus } from "./ServerStatus";
 import { useTheme } from "../lib/useTheme";
 
 const nav = [
@@ -33,7 +33,7 @@ export function SiteHeader() {
             </div>
           </Link>
           <div className="hidden sm:block">
-            <ServerStatus />
+            {/* <ServerStatus /> */}
           </div>
         </div>
 
@@ -76,9 +76,9 @@ export function SiteHeader() {
             {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
           </button>
           
-          <div className="hidden sm:block">
+          {/* <div className="hidden sm:block">
             <ServerStatus />
-          </div>
+          </div> */}
           
           <button
             className="text-primary hover:text-accent p-2 rounded-lg bg-secondary/50 border border-border/40 transition-colors"
