@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="space-y-4">
           <div className="font-serif text-2xl font-semibold text-primary">Soumen Bhatta</div>
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground/80">
-            Founder &amp; Group CEO building worker-first beauty &amp; wellness marketplaces across India.
+            Founder &amp; Group CEO, <a href="https://cuatrolabs.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-semibold transition-colors duration-300">Cuatro Labs</a>. Scaling global beauty brands and worker-first service platforms in India.
           </p>
         </div>
 
@@ -22,8 +22,8 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-3 text-sm">
           <span className="eyebrow mb-2">Connect</span>
-          <a href="mailto:careers@atomaindia.com" className="flex items-center gap-2 hover:text-accent transition-colors duration-300">
-            <Mail size={15} className="text-accent" /> careers@atomaindia.com
+          <a href="mailto:tech@cuatrolabs.com" className="flex items-center gap-2 hover:text-accent transition-colors duration-300">
+            <Mail size={15} className="text-accent" /> tech@cuatrolabs.com
           </a>
           <div className="flex gap-4 pt-2 text-muted-foreground/80">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent transition-colors duration-300">

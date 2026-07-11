@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Send, CheckCircle2, User, Building, MessageSquare, ArrowLeft, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, User, Building, MessageSquare, ArrowLeft, AlertCircle } from "lucide-react";
 import { API_BASE_URL } from "../config";
 
 export const Route = createFileRoute("/contact")({
@@ -56,7 +56,7 @@ function Contact() {
       });
 
       clearTimeout(timeoutId);
-      
+
       let data: any = {};
       const contentType = res.headers.get("content-type");
       if (contentType && contentType.includes("application/json")) {
@@ -128,14 +128,14 @@ function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <h3 className="text-2xl font-serif font-semibold text-primary mb-6">Send a Message</h3>
-                
+
                 {errorMsg && (
                   <div className="flex items-center gap-3 rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive animate-fade-in">
                     <AlertCircle size={18} className="shrink-0" />
                     <span>{errorMsg}</span>
                   </div>
                 )}
-                
+
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-muted-foreground/80 font-sans">
@@ -222,25 +222,52 @@ function Contact() {
           </div>
 
           {/* Quick Contact Details */}
-          <div className="flex flex-col gap-10 md:gap-8 justify-between py-2">
+          <div className="flex flex-col gap-8 justify-between py-2 text-left">
             <div className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground/80 font-sans">Direct Contact</h4>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground/80 font-sans">Cuatro Labs Contact</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Feel free to email directly if you prefer, or connect with me via social channels.
+                Whether you're a service professional, a potential partner, or someone who believes in worker-first businesses — I'd love to hear from you.
               </p>
-              
-              <a
-                href="mailto:careers@atomaindia.com"
-                className="group flex items-center gap-4 rounded-xl border border-border/35 bg-card/45 p-4 hover:border-accent/40 hover:bg-secondary/25 transition-all duration-300 w-full shadow-sm"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300 shrink-0">
-                  <Mail size={16} />
+
+              <div className="space-y-3">
+                <a
+                  href="mailto:tech@cuatrolabs.com"
+                  className="group flex items-center gap-4 rounded-xl border border-border/35 bg-card/45 p-4 hover:border-accent/40 hover:bg-secondary/25 transition-all duration-300 w-full shadow-sm"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300 shrink-0">
+                    <Mail size={16} />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-muted-foreground/80 font-bold uppercase tracking-wider font-sans">Email Address</span>
+                    <span className="text-sm font-semibold text-primary tracking-wide">sb@cuatrolabs.com</span>
+                  </div>
+                </a>
+
+                <a
+                  href="tel:+918349963744"
+                  className="group flex items-center gap-4 rounded-xl border border-border/35 bg-card/45 p-4 hover:border-accent/40 hover:bg-secondary/25 transition-all duration-300 w-full shadow-sm"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300 shrink-0">
+                    <Phone size={16} />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-muted-foreground/80 font-bold uppercase tracking-wider font-sans">Phone Number</span>
+                    <span className="text-sm font-semibold text-primary tracking-wide">***** *****</span>
+                  </div>
+                </a>
+
+                <div
+                  className="group flex items-center gap-4 rounded-xl border border-border/35 bg-card/45 p-4 hover:border-accent/40 transition-all duration-300 w-full shadow-sm"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent shrink-0">
+                    <MapPin size={16} />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-muted-foreground/80 font-bold uppercase tracking-wider font-sans">Head Office</span>
+                    <span className="text-sm font-semibold text-primary tracking-wide">Chennai, Tamil Nadu – 600002, India</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="block text-[10px] text-muted-foreground/80 font-bold uppercase tracking-wider font-sans">Email Address</span>
-                  <span className="text-sm font-semibold text-primary tracking-wide">careers@atomaindia.com</span>
-                </div>
-              </a>
+              </div>
             </div>
 
             <div className="space-y-4">

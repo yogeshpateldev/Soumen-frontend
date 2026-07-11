@@ -62,8 +62,8 @@ export function ServerStatus() {
       ) : isOnline ? (
         <>
           <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500/40 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green/40 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green"></span>
           </span>
           <span className="text-muted-foreground font-sans tracking-wide flex items-center gap-1.5">
             API Active
