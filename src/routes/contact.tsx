@@ -231,7 +231,7 @@ function Contact() {
 
               <div className="space-y-3">
                 <a
-                  href="mailto:tech@cuatrolabs.com"
+                  href="mailto:sb@cuatrolabs.com"
                   className="group flex items-center gap-4 rounded-xl border border-border/35 bg-card/45 p-4 hover:border-accent/40 hover:bg-secondary/25 transition-all duration-300 w-full shadow-sm"
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300 shrink-0">
@@ -267,6 +267,23 @@ function Contact() {
                     <span className="text-sm font-semibold text-primary tracking-wide">Chennai, Tamil Nadu – 600002, India</span>
                   </div>
                 </div>
+
+                <a
+                  href="https://www.linkedin.com/in/soumen-bhatta-370122198"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 rounded-xl border border-border/35 bg-card/45 p-4 hover:border-accent/40 hover:bg-secondary/25 transition-all duration-300 w-full shadow-sm"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300 shrink-0">
+                    <svg className="h-[16px] w-[16px] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-muted-foreground/80 font-bold uppercase tracking-wider font-sans">LinkedIn</span>
+                    <span className="text-sm font-semibold text-primary tracking-wide">Connect on LinkedIn</span>
+                  </div>
+                </a>
               </div>
             </div>
 

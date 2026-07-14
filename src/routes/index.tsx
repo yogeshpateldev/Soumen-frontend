@@ -25,6 +25,31 @@ const philosophyQuotes = [
 
 const ventures = [
   {
+    name: "Atoma",
+    role: "Founder & Group CEO",
+    years: "2025 — Present",
+    sector: "Hyperlocal Services (Cuatro Labs Brand)",
+    websiteUrl: "https://www.atoma.in/",
+    body: (
+      <div className="space-y-4 text-left">
+        <p>
+          Atoma is our flagship hyperlocal beauty & wellness platform bringing trusted salon professionals directly to customers' homes. What sets it apart is its worker-first model:
+        </p>
+        <ul className="list-disc pl-5 space-y-1 text-xs sm:text-sm">
+          <li>Insurance protection from Day 1</li>
+          <li>Health & accidental coverage for service professionals</li>
+          <li>Skill empowerment and earning growth pathways</li>
+          <li>Dignified, respected, long-term work — not gig-economy churn</li>
+        </ul>
+        <p className="text-xs text-muted-foreground/80 font-sans">
+          Launched in Gandhinagar and Ahmedabad, expanding rapidly with a goal of reaching 40 cities and building India's fastest-growing worker-first service ecosystem.
+        </p>
+      </div>
+    ),
+    outcome: "Flagship Venture",
+    flagship: true,
+  },
+  {
     name: "Cuatro Labs",
     role: "Founder & Group CEO",
     years: "2025 — Present",
@@ -36,8 +61,9 @@ const ventures = [
           I founded Cuatro Labs in June 2025 as India's exclusive gateway for world-class international beauty brands — managing end-to-end distribution, retail partnerships, CDSCO compliance, warehousing, logistics, and brand growth.
         </p>
         <div className="space-y-2">
-          <p className="font-semibold text-primary text-sm">Exclusive Indian Distribution Portfolio:</p>
+          <p className="font-semibold text-primary text-sm">Flagship Venture &amp; Distribution Portfolio:</p>
           <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+            <li><strong>ATOMA</strong> — Our flagship hyperlocal worker-first beauty &amp; wellness platform</li>
             <li><strong>Prohall India</strong> — Brazilian professional haircare, including the acclaimed Select One treatment and daily-care ranges</li>
             <li><strong>Arveni</strong> — Spanish luxe skincare, biotech-driven formulas for pollution, blue light, and premature aging protection</li>
             <li><strong>Epilise</strong> — Advanced medical aesthetics for skin rejuvenation and pigmentation management</li>
@@ -51,30 +77,6 @@ const ventures = [
     ),
     outcome: "Parent Company",
     highlight: true,
-  },
-  {
-    name: "Atoma",
-    role: "Founder & Group CEO",
-    years: "2025 — Present",
-    sector: "Hyperlocal Services (Cuatro Labs Brand)",
-    websiteUrl: "https://www.atoma.in/",
-    body: (
-      <div className="space-y-4 text-left">
-        <p>
-          Atoma is a hyperlocal beauty & wellness platform bringing trusted salon professionals directly to customers' homes. What sets it apart is its worker-first model:
-        </p>
-        <ul className="list-disc pl-5 space-y-1 text-xs sm:text-sm">
-          <li>Insurance protection from Day 1</li>
-          <li>Health & accidental coverage for service professionals</li>
-          <li>Skill empowerment and earning growth pathways</li>
-          <li>Dignified, respected, long-term work — not gig-economy churn</li>
-        </ul>
-        <p className="text-xs text-muted-foreground/80 font-sans">
-          Launched in Gandhinagar and Ahmedabad, expanding rapidly with a goal of reaching 40 cities and building India's fastest-growing worker-first service ecosystem.
-        </p>
-      </div>
-    ),
-    outcome: "Salon at Home",
   },
   {
     name: "Prohall Professional India",
@@ -285,100 +287,6 @@ function formatContent(text: string) {
   });
 }
 
-// const AtomaBrandingSVG = () => (
-//   <svg viewBox="0 0 600 300" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-//     <rect width="600" height="300" fill="url(#bg-grad-1)" />
-//     <rect x="30" y="30" width="540" height="240" rx="8" fill="#141519" stroke="#f99c00" strokeWidth="1" strokeOpacity="0.25" />
-//     <path d="M 30 80 L 570 80 M 30 140 L 570 140 M 30 200 L 570 200" stroke="#1f2025" strokeWidth="1" />
-//     <circle cx="300" cy="110" r="40" fill="#1c1d24" stroke="#f99c00" strokeWidth="2" />
-//     <path d="M290 100 C290 95, 310 95, 310 100 C310 110, 290 115, 300 128" stroke="#f99c00" strokeWidth="2.5" strokeLinecap="round" />
-//     <circle cx="300" cy="138" r="2.5" fill="#f99c00" />
-//     <text x="300" y="195" fontFamily="var(--font-serif)" fontSize="26" fill="#ffffff" fontWeight="bold" textAnchor="middle" letterSpacing="1">ATOMA</text>
-//     <text x="300" y="217" fontFamily="var(--font-sans)" fontSize="10" fill="#f99c00" fontWeight="600" textAnchor="middle" letterSpacing="4">SALON-AT-HOME</text>
-//     <text x="300" y="238" fontFamily="var(--font-sans)" fontSize="9" fill="#71717a" textAnchor="middle">LAUNCHING IN 40+ CITIES</text>
-//     <defs>
-//       <linearGradient id="bg-grad-1" x1="0" y1="0" x2="600" y2="300" gradientUnits="userSpaceOnUse">
-//         <stop stopColor="#18181b" />
-//         <stop offset="1" stopColor="#09090b" />
-//       </linearGradient>
-//     </defs>
-//   </svg>
-// );
-
-// const AnniversarySVG = () => (
-//   <svg viewBox="0 0 600 300" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-//     <rect width="600" height="300" fill="url(#bg-grad-2)" />
-//     <rect x="30" y="30" width="540" height="240" rx="8" fill="#0b0f19" stroke="#3080ff" strokeWidth="1" strokeOpacity="0.2" />
-//     <circle cx="180" cy="150" r="50" fill="#1e1b4b" stroke="#3080ff" strokeWidth="1.5" />
-//     <rect x="155" y="125" width="50" height="50" rx="4" fill="#312e81" stroke="#3080ff" strokeWidth="1.5" transform="rotate(15 180 150)" />
-//     <text x="380" y="120" fontFamily="var(--font-sans)" fontSize="20" fill="#ffffff" fontWeight="bold">1st Anniversary</text>
-//     <text x="380" y="145" fontFamily="var(--font-sans)" fontSize="13" fill="#f99c00" fontWeight="600">CUATRO LABS DESIGN</text>
-//     <text x="380" y="175" fontFamily="var(--font-sans)" fontSize="11" fill="#a1a1aa">Celebrating our very first hire,</text>
-//     <text x="380" y="195" fontFamily="var(--font-sans)" fontSize="11" fill="#a1a1aa">building a startup on trust &amp; values.</text>
-//     <circle cx="120" cy="90" r="3" fill="#f99c00" />
-//     <circle cx="250" cy="100" r="2.5" fill="#3080ff" />
-//     <circle cx="110" cy="200" r="3.5" fill="#10b981" />
-//     <circle cx="240" cy="210" r="2" fill="#ef4444" />
-//     <defs>
-//       <linearGradient id="bg-grad-2" x1="0" y1="0" x2="600" y2="300" gradientUnits="userSpaceOnUse">
-//         <stop stopColor="#0f172a" />
-//         <stop offset="1" stopColor="#020617" />
-//       </linearGradient>
-//     </defs>
-//   </svg>
-// );
-
-// const WorkerFirstSVG = () => (
-//   <svg viewBox="0 0 600 300" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-//     <rect width="600" height="300" fill="url(#bg-grad-3)"/>
-//     <rect x="30" y="30" width="540" height="240" rx="8" fill="#021c15" stroke="#10b981" strokeWidth="1" strokeOpacity="0.2"/>
-//     <path d="M 220 100 L 220 80 L 300 65 L 380 80 L 380 130 C 380 190, 300 230, 300 230 C 300 230, 220 190, 220 130 Z" fill="#064e3b" stroke="#10b981" strokeWidth="2.5" strokeOpacity="0.8"/>
-//     <path d="M 285 130 L 315 130 M 300 115 L 300 145" stroke="#ffffff" strokeWidth="4" strokeLinecap="round"/>
-//     <text x="300" y="178" fontFamily="var(--font-sans)" fontSize="14" fill="#ffffff" fontWeight="bold" textAnchor="middle">DAY 1 INSURANCE</text>
-//     <text x="300" y="198" fontFamily="var(--font-sans)" fontSize="10" fill="#10b981" fontWeight="600" textAnchor="middle" letterSpacing="1">WORKER-FIRST ECOSYSTEM</text>
-//     <defs>
-//       <linearGradient id="bg-grad-3" x1="0" y1="0" x2="600" y2="300" gradientUnits="userSpaceOnUse">
-//         <stop stopColor="#022c22"/>
-//         <stop offset="1" stopColor="#064e3b"/>
-//       </linearGradient>
-//     </defs>
-//   </svg>
-// );
-
-// const LeadershipSVG = () => (
-//   <svg viewBox="0 0 600 300" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-//     <rect width="600" height="300" fill="url(#bg-grad-4)"/>
-//     <rect x="30" y="30" width="540" height="240" rx="8" fill="#18151f" stroke="#f99c00" strokeWidth="1" strokeOpacity="0.2"/>
-//     <circle cx="300" cy="110" r="30" fill="#78350f" stroke="#f99c00" strokeWidth="2"/>
-//     <path d="M 285 135 L 315 135 M 290 143 L 310 143" stroke="#f99c00" strokeWidth="2"/>
-//     <line x1="300" y1="65" x2="300" y2="50" stroke="#f99c00" strokeWidth="2" strokeLinecap="round"/>
-//     <line x1="255" y1="110" x2="240" y2="110" stroke="#f99c00" strokeWidth="2" strokeLinecap="round"/>
-//     <line x1="345" y1="110" x2="360" y2="110" stroke="#f99c00" strokeWidth="2" strokeLinecap="round"/>
-//     <line x1="268" y1="78" x2="258" y2="68" stroke="#f99c00" strokeWidth="2" strokeLinecap="round"/>
-//     <line x1="332" y1="78" x2="342" y2="68" stroke="#f99c00" strokeWidth="2" strokeLinecap="round"/>
-//     <text x="300" y="185" fontFamily="var(--font-sans)" fontSize="15" fill="#ffffff" fontWeight="bold" textAnchor="middle">HIRE BEYOND COMFORT</text>
-//     <text x="300" y="208" fontFamily="var(--font-sans)" fontSize="11" fill="#f99c00" fontWeight="600" textAnchor="middle" letterSpacing="1">SECURE LEADERSHIP &amp; EXCEPTIONAL TEAMS</text>
-//     <defs>
-//       <linearGradient id="bg-grad-4" x1="0" y1="0" x2="600" y2="300" gradientUnits="userSpaceOnUse">
-//         <stop stopColor="#1b122c"/>
-//         <stop offset="1" stopColor="#2c1404"/>
-//       </linearGradient>
-//     </defs>
-//   </svg>
-// );
-
-// function PostMedia({ content }: { content: string }) {
-//   if (content.includes("branding")) {
-//     return <AtomaBrandingSVG />;
-//   } else if (content.includes("Selva")) {
-//     return <AnniversarySVG />;
-//   } else if (content.includes("Worker-First")) {
-//     return <WorkerFirstSVG />;
-//   } else if (content.includes("secure leader")) {
-//     return <LeadershipSVG />;
-//   }
-//   return null;
-// }
 
 function JournalCard({
   post,
@@ -659,7 +567,7 @@ function Index() {
               That foundation — understanding cost, supply chains, vendor relationships, and how to run lean — became the launchpad for my shift into entrepreneurship. In 2023, I stepped in as Co-Founder of Biolume Skin Science, my first real leap from operator to builder.
             </p>
             <p>
-              In June 2025, I founded Cuatro Labs — India's exclusive distributor for four international beauty brands, bringing world-class formulations to the Indian market through pan-India retail and B2B partnerships. Under its umbrella sit Atoma, which is reimagining beauty and wellness by bringing trusted salon professionals directly to customers' doorsteps while giving service professionals dignified, protected work from day one, and Prohall Professional India, the Brazilian haircare brand I lead as CEO, bringing salon-grade treatments like Select One to Indian salons.
+              In June 2025, I founded Cuatro Labs — India's exclusive distributor for four international beauty brands, bringing world-class formulations to the Indian market through pan-India retail and B2B partnerships. Under its umbrella sits our flagship brand, Atoma, which is reimagining beauty and wellness by bringing trusted salon professionals directly to customers' doorsteps while giving service professionals dignified, protected work from day one, and Prohall Professional India, the Brazilian haircare brand I lead as CEO, bringing salon-grade treatments like Select One to Indian salons.
             </p>
             <p>
               Today, I call myself a builder first: someone who believes companies aren't built by ideas alone, but by the people who show up for them — on the streets, at 2 a.m., installing the first branding boards by hand.
@@ -673,7 +581,7 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-20">
           <span className="eyebrow">Leadership Philosophy</span>
           <h2 className="mt-3 max-w-2xl text-3xl sm:text-4xl font-serif font-semibold text-primary leading-tight">
-            In His Words: Convictions that shape how I build.
+            In My Words: Convictions that shape how I build.
           </h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-2">
             {philosophyQuotes.map((quote, i) => (
@@ -704,31 +612,43 @@ function Index() {
 
           <div className="mt-12 space-y-8">
             {ventures.map((v) => {
+              const isFlagship = "flagship" in v && v.flagship;
               const isCuatro = v.name === "Cuatro Labs";
-              const isMainBrand = v.name === "Atoma" || v.name === "Prohall Professional India";
-              const borderClass = isCuatro
-                ? "border-accent/40 bg-accent/[0.01] hover:border-accent/60 shadow-md ring-1 ring-accent/10"
-                : isMainBrand
-                  ? "border-blue/30 bg-card hover:border-blue/50 shadow-sm"
-                  : "border-border/60 bg-card hover:border-accent/30 shadow-sm";
+              const isMainBrand = v.name === "Prohall Professional India";
+              const borderClass = isFlagship
+                ? "border-accent bg-accent/[0.02] hover:border-accent/70 shadow-lg ring-2 ring-accent/15 scale-[1.01] md:scale-[1.02]"
+                : isCuatro
+                  ? "border-accent/40 bg-accent/[0.01] hover:border-accent/60 shadow-md ring-1 ring-accent/10"
+                  : isMainBrand
+                    ? "border-blue/30 bg-card hover:border-blue/50 shadow-sm"
+                    : "border-border/60 bg-card hover:border-accent/30 shadow-sm";
 
-              const sectorBadgeClass = isCuatro
-                ? "bg-accent/10 border border-accent/25 text-accent"
-                : isMainBrand
-                  ? "bg-blue/10 border border-blue/25 text-blue"
-                  : "bg-secondary border border-border text-muted-foreground";
+              const sectorBadgeClass = isFlagship
+                ? "bg-accent/15 border border-accent/35 text-accent font-bold"
+                : isCuatro
+                  ? "bg-accent/10 border border-accent/25 text-accent"
+                  : isMainBrand
+                    ? "bg-blue/10 border border-blue/25 text-blue"
+                    : "bg-secondary border border-border text-muted-foreground";
 
-              const outcomeBadgeClass = isCuatro
-                ? "bg-accent/10 border border-accent/20 text-accent font-bold"
-                : isMainBrand
-                  ? "bg-blue/10 border border-blue/20 text-blue font-bold"
-                  : "bg-secondary border border-border text-primary font-semibold";
+              const outcomeBadgeClass = isFlagship
+                ? "bg-accent/20 border border-accent/40 text-accent font-extrabold shadow-sm"
+                : isCuatro
+                  ? "bg-accent/10 border border-accent/20 text-accent font-bold"
+                  : isMainBrand
+                    ? "bg-blue/10 border border-blue/20 text-blue font-bold"
+                    : "bg-secondary border border-border text-primary font-semibold";
 
               return (
                 <div
                   key={v.name}
                   className={`grid gap-6 rounded-2xl border p-8 md:grid-cols-[1fr_2fr] md:p-10 transition-all duration-300 relative overflow-hidden ${borderClass}`}
                 >
+                  {isFlagship && (
+                    <div className="absolute top-0 right-0 bg-accent px-4 py-1 text-[10px] font-bold tracking-wider text-accent-foreground uppercase rounded-bl-xl shadow-sm">
+                      Flagship Brand
+                    </div>
+                  )}
                   {isCuatro && (
                     <div className="absolute top-0 right-0 bg-accent px-4 py-1 text-[10px] font-bold tracking-wider text-accent-foreground uppercase rounded-bl-xl">
                       Parent Group

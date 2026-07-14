@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -22,14 +22,17 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-3 text-sm">
           <span className="eyebrow mb-2">Connect</span>
-          <a href="mailto:tech@cuatrolabs.com" className="flex items-center gap-2 hover:text-accent transition-colors duration-300">
-            <Mail size={15} className="text-accent" /> tech@cuatrolabs.com
+          <a href="mailto:sb@cuatrolabs.com" className="flex items-center gap-2 hover:text-accent transition-colors duration-300">
+            <Mail size={15} className="text-accent" /> sb@cuatrolabs.com
           </a>
+          <div className="flex items-center gap-2 text-muted-foreground/80">
+            <MapPin size={15} className="text-accent" /> Chennai, Tamil Nadu – 600002, India
+          </div>
           <div className="flex gap-4 pt-2 text-muted-foreground/80">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/soumen-bhatta-370122198" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center gap-2 hover:text-accent transition-colors duration-300">
               <svg className="h-[18px] w-[18px] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
+              </svg> LinkedIn
             </a>
           </div>
         </div>
