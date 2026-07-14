@@ -1,119 +1,242 @@
+import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
-// import { ServerStatus } from "./ServerStatus";
+import { cn } from "../lib/utils";
 import { useTheme } from "../lib/useTheme";
 
-const nav = [
+const navLinks = [
   { to: "/", hash: undefined, label: "Home" },
+  { to: "/", hash: "about", label: "About" },
   { to: "/", hash: "ventures", label: "Ventures" },
   { to: "/", hash: "journey", label: "Journey" },
   { to: "/", hash: "insights", label: "Insights" },
-] as const;
+];
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const { theme, toggleTheme } = useTheme();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleScrollSpy = () => {
+      const sectionIds = ["about", "ventures", "journey", "insights"];
+      
+      // If sections do not exist in DOM (e.g. on a details subpage), clear active states
+      const hasSections = sectionIds.some((id) => document.getElementById(id) !== null);
+      if (!hasSections) {
+        setActiveSection("");
+        return;
+      }
+
+      // Check if user is scrolled near top of the page (with cross-browser support)
+      const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop < 120) {
+        setActiveSection("home");
+        return;
+      }
+
+      let currentActive = "home";
+      const threshold = 180; // Trigger threshold from top of viewport
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= threshold) {
+            currentActive = id;
+          }
+        }
+      }
+      setActiveSection(currentActive);
+    };
+
+    window.addEventListener("scroll", handleScrollSpy);
+    // Run spy logic initially after short timeout to let DOM render
+    const timer = setTimeout(handleScrollSpy, 150);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollSpy);
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-md transition-all duration-300">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-4 sm:gap-6">
-          <Link to="/" className="flex items-center gap-3 font-serif text-lg tracking-tight text-foreground group">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent/80 text-accent-foreground font-sans font-bold text-sm shadow-md shadow-accent/10 transition-transform duration-300 group-hover:scale-105">
-              SB
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
+        isScrolled || isMenuOpen
+          ? "bg-background/90 border-b border-border/50 shadow-soft backdrop-blur-md"
+          : "bg-transparent"
+      )}
+    >
+      <div className="section-container">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <Link
+            to="/"
+            hash={undefined}
+            className="group font-display font-bold text-xl md:text-2xl text-foreground transition-all duration-300"
+          >
+            <span className="relative">
+              Soumen
+              <span className="text-primary transition-colors duration-300 group-hover:text-accent">
+                .
+              </span>
+              Bhatta
+              <span
+                className={cn(
+                  "absolute -bottom-1 left-0 h-0.5 bg-gradient-blue transition-all duration-300 ease-out",
+                  "w-0 group-hover:w-full"
+                )}
+              />
             </span>
-            <div className="flex flex-col">
-              <span className="font-semibold text-primary group-hover:text-accent transition-colors leading-none duration-300">
-                Soumen Bhatta
-              </span>
-              <span className="text-[10px] text-muted-foreground font-sans tracking-wide leading-none mt-1">
-                Founder &amp; CEO
-              </span>
-            </div>
           </Link>
-          <div className="hidden sm:block">
-            {/* <ServerStatus /> */}
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1.5">
+            {navLinks.map((link, index) => {
+              const isActive = 
+                (link.hash === undefined && activeSection === "home") ||
+                (link.hash !== undefined && activeSection === link.hash);
+              return (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  hash={link.hash}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    if (link.hash === undefined) {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
+                  className={cn(
+                    "relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ease-in-out",
+                    "hover:bg-primary/5 active:scale-95",
+                    isActive 
+                      ? "text-primary bg-primary/10 font-bold scale-102"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full border border-border/40 bg-secondary/35 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-300 transform active:scale-95 cursor-pointer ml-1"
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
+            </button>
+
+            <Link
+              to="/"
+              hash="contact"
+              className={cn(
+                "ml-2 px-5 py-2.5 text-sm font-medium rounded-full",
+                "bg-gradient-blue text-white",
+                "shadow-md shadow-primary/20",
+                "transition-all duration-300 ease-out",
+                "hover:shadow-lg hover:shadow-primary/30 hover:scale-105",
+                "active:scale-95"
+              )}
+            >
+              Let's Talk
+            </Link>
+          </nav>
+
+          {/* Mobile Buttons */}
+          <div className="flex items-center gap-2 md:hidden">
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full border border-border/40 bg-secondary/35 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
+            </button>
+
+            {/* Mobile Menu Trigger */}
+            <button
+              className="text-foreground hover:text-primary p-2 rounded-full bg-secondary/35 border border-border/40 transition-colors relative w-10 h-10 flex items-center justify-center"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
 
-        <nav className="hidden items-center gap-6 md:flex">
-          {nav.map((n) => (
-            <Link
-              key={n.label}
-              to={n.to}
-              hash={n.hash}
-              className="text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-accent relative py-1"
-              activeProps={{ className: "text-accent font-semibold" }}
-              activeOptions={{ exact: n.hash === undefined }}
-            >
-              {n.label}
-            </Link>
-          ))}
-          
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg border border-border/40 bg-secondary/35 text-muted-foreground hover:text-accent hover:border-accent/40 transition-all duration-300 transform active:scale-95 cursor-pointer"
-            aria-label="Toggle theme"
-          >
-            {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
-          </button>
-
-          <Link
-            to="/contact"
-            className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/10 hover:shadow-accent/25 hover:bg-accent/90 transition-all duration-300 transform active:scale-[0.98]"
-          >
-            Get in touch
-          </Link>
-        </nav>
-
-        <div className="flex items-center gap-3 md:hidden">
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg border border-border/40 bg-secondary/35 text-muted-foreground hover:text-accent transition-colors cursor-pointer"
-            aria-label="Toggle theme"
-          >
-            {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
-          </button>
-          
-          {/* <div className="hidden sm:block">
-            <ServerStatus />
-          </div> */}
-          
-          <button
-            className="text-primary hover:text-accent p-2 rounded-lg bg-secondary/50 border border-border/40 transition-colors"
-            onClick={() => setOpen((o) => !o)}
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+        {/* Mobile Navigation */}
+        <div
+          className={cn(
+            "md:hidden overflow-hidden transition-all duration-500 ease-out",
+            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          )}
+        >
+          <nav className="py-4 border-t border-border/50">
+            <div className="flex flex-col gap-1">
+              {navLinks.map((link, index) => {
+                const isActive = 
+                  (link.hash === undefined && activeSection === "home") ||
+                  (link.hash !== undefined && activeSection === link.hash);
+                return (
+                  <Link
+                    key={link.label}
+                    to={link.to}
+                    hash={link.hash}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      if (link.hash === undefined) {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }}
+                    className={cn(
+                      "px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 block",
+                      "transform hover:translate-x-2",
+                      isActive 
+                        ? "text-primary bg-primary/10 font-semibold"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    )}
+                    style={{
+                      animationDelay: `${index * 50}ms`,
+                      transitionDelay: isMenuOpen ? `${index * 50}ms` : "0ms",
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+              <Link
+                to="/"
+                hash="contact"
+                onClick={() => setIsMenuOpen(false)}
+                className={cn(
+                  "mt-2 mx-4 px-5 py-3 text-base font-medium rounded-xl text-center",
+                  "bg-gradient-blue text-white",
+                  "shadow-md shadow-primary/20",
+                  "transition-all duration-300"
+                )}
+              >
+                Let's Talk
+              </Link>
+            </div>
+          </nav>
         </div>
       </div>
-
-      {open && (
-        <nav className="flex flex-col gap-1 border-t border-border/40 bg-background/95 backdrop-blur-lg px-6 py-5 md:hidden animate-fade-in">
-          {nav.map((n) => (
-            <Link
-              key={n.label}
-              to={n.to}
-              hash={n.hash}
-              onClick={() => setOpen(false)}
-              className="py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-accent border-b border-border/20 last:border-b-0"
-              activeProps={{ className: "text-accent font-semibold" }}
-              activeOptions={{ exact: n.hash === undefined }}
-            >
-              {n.label}
-            </Link>
-          ))}
-          <Link
-            to="/contact"
-            onClick={() => setOpen(false)}
-            className="mt-4 text-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/10 hover:bg-accent/90 transition-all"
-          >
-            Get in touch
-          </Link>
-        </nav>
-      )}
     </header>
   );
 }
+export default SiteHeader;
