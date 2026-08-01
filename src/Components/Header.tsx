@@ -182,12 +182,12 @@ export function SiteHeader() {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "md:hidden overflow-hidden transition-all duration-500 ease-out",
-            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            "md:hidden overflow-y-auto transition-all duration-500 ease-out",
+            isMenuOpen ? "max-h-[calc(100vh-5rem)] opacity-100 py-3" : "max-h-0 opacity-0 pointer-events-none"
           )}
         >
-          <nav className="py-4 border-t border-border/50">
-            <div className="flex flex-col gap-1">
+          <nav className="py-2 border-t border-border/40 bg-card/60 backdrop-blur-xl rounded-2xl my-2 p-2 shadow-xl border">
+            <div className="flex flex-col gap-1.5">
               {navLinks.map((link, index) => {
                 const isActive = 
                   (link.hash === undefined && activeSection === "home") ||
@@ -204,18 +204,19 @@ export function SiteHeader() {
                       }
                     }}
                     className={cn(
-                      "px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 block",
-                      "transform hover:translate-x-2",
+                      "px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 flex items-center justify-between",
                       isActive 
-                        ? "text-primary bg-primary/10 font-semibold"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                        ? "text-primary bg-primary/10 font-bold border border-primary/20"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
                     )}
                     style={{
-                      animationDelay: `${index * 50}ms`,
-                      transitionDelay: isMenuOpen ? `${index * 50}ms` : "0ms",
+                      transitionDelay: isMenuOpen ? `${index * 40}ms` : "0ms",
                     }}
                   >
-                    {link.label}
+                    <span>{link.label}</span>
+                    {isActive && (
+                      <span className="w-2 h-2 rounded-full bg-primary" />
+                    )}
                   </Link>
                 );
               })}
@@ -224,9 +225,9 @@ export function SiteHeader() {
                 hash="contact"
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
-                  "mt-2 mx-4 px-5 py-3 text-base font-medium rounded-xl text-center",
+                  "mt-2 px-5 py-3.5 text-base font-semibold rounded-xl text-center",
                   "bg-gradient-blue text-white",
-                  "shadow-md shadow-primary/20",
+                  "shadow-md shadow-primary/20 active:scale-98",
                   "transition-all duration-300"
                 )}
               >

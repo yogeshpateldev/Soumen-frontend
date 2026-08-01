@@ -70,6 +70,17 @@
   --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-spin-slow: spin-slow 8s linear infinite;
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 
   @keyframes fade-in {
     from {
@@ -359,7 +370,16 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
   border-radius: var(--radius);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transform: scale(0.98);
+    border-color: color-mix(in srgb, var(--color-primary) 50%, transparent);
+    background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-card));
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--color-primary) 12%, transparent);
+  }
 }
 
 @utility bg-dot-pattern {
@@ -387,12 +407,20 @@
 }
 
 @utility card-hover {
-  transition: all 0.3s ease-out;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     box-shadow: 0 10px 30px color-mix(in srgb, var(--color-primary) 5%, transparent);
     border-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
     transform: translateY(-4px);
+  }
+
+  &:active {
+    transform: scale(0.975);
+    border-color: color-mix(in srgb, var(--color-primary) 50%, transparent);
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--color-primary) 12%, transparent);
   }
 }
 
@@ -416,4 +444,162 @@
 
 .scroll-container::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES & UTILITIES FOR COMPREHENSIVE RESPONSIVENESS
+   ========================================================================== */
+
+/* Universal Layout & Overflow Protection */
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent long text strings or URLs from causing horizontal scrolling */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Large Screens & Desktop (<= 1280px) */
+@media (max-width: 1280px) {
+  .section-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Medium Screens & Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .section-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .glass-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Tablets & Small Laptops (<= 768px) */
+@media (max-width: 768px) {
+
+  /* Dynamic Typography Scaling */
+  h1 {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+  }
+
+  /* Responsive Section Padding for Tablets */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .section-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Safe hover transforms on touch devices */
+  .card-hover:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Mobile Screens (<= 640px) */
+@media (max-width: 640px) {
+
+  /* Compact Section Padding for Mobile */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .section-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Buttons & CTAs full width on mobile */
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group a,
+  .hero-cta-group button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .insight-card {
+    padding: 1rem;
+  }
+
+  .stat-tile {
+    padding: 0.85rem;
+  }
+
+  .stat-tile .metric-val {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ultra-Small Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  .eyebrow {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* Form inputs & touch targets - 16px font prevents iOS auto-zoom */
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px !important;
+  }
+
+  .glass-card {
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
 }

@@ -25,7 +25,7 @@ function CaseStudy() {
   }
 
   return (
-    <article className="py-24 md:py-32 relative text-left bg-background min-h-screen">
+    <article className="py-16 md:py-20 relative text-left bg-background min-h-screen">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-dot-pattern bg-dot-md opacity-25 pointer-events-none" />
       <div className="absolute top-10 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
@@ -47,21 +47,21 @@ function CaseStudy() {
         </Link>
 
         {/* Header */}
-        <header className="mb-12 opacity-0 animate-fade-in">
+        <header className="mb-8 sm:mb-12 opacity-0 animate-fade-in">
           <span
             className={cn(
-              "inline-flex items-center px-4 py-1.5 rounded-full",
-              "text-xs font-semibold uppercase tracking-wider",
+              "inline-flex items-center px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full",
+              "text-[10px] sm:text-xs font-semibold uppercase tracking-wider",
               "bg-primary/10 text-primary",
-              "mb-4"
+              "mb-3 sm:mb-4"
             )}
           >
             {project.category}
           </span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-2 mb-6">
+          <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground mt-1 sm:mt-2 mb-4 sm:mb-6 leading-tight">
             {project.title}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed">
             {project.description}
           </p>
         </header>
@@ -329,7 +329,7 @@ function CaseStudy() {
           <aside className="lg:col-span-1">
             <div
               className={cn(
-                "sticky top-24 p-6 md:p-8 rounded-2xl",
+                "lg:sticky lg:top-24 p-5 sm:p-6 md:p-8 rounded-2xl",
                 "bg-card border border-border/60",
                 "shadow-xl shadow-primary/5",
                 "opacity-0 animate-fade-in"

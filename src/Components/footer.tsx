@@ -4,7 +4,7 @@ import { Mail, MapPin } from "lucide-react";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/40 bg-background-alt text-muted-foreground">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-3 text-left">
+      <div className="mx-auto grid max-w-6xl gap-6 sm:gap-10 px-4 sm:px-6 py-8 sm:py-16 md:grid-cols-3 text-left">
         {/* About column */}
         <div className="space-y-4">
           <div className="font-display text-2xl font-bold text-foreground">

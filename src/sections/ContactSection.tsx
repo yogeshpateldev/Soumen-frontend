@@ -69,11 +69,11 @@ export function ContactSection() {
   return (
     <>
       {/* SECTION 6: CONTACT FORM */}
-      <section id="contact" className="relative py-24 md:py-32 bg-background">
+      <section id="contact" className="relative py-16 md:py-20 bg-background">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-blue opacity-5 blur-3xl rounded-full pointer-events-none" />
 
         <div className="section-container relative">
-          <div className="max-w-3xl mb-12 text-left">
+          <div className="max-w-3xl mb-6 sm:mb-12 text-left">
             <span className="eyebrow">Get in Touch</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
               Let's build something <span className="gradient-text">together.</span>
@@ -83,9 +83,9 @@ export function ContactSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-10 md:gap-12 md:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid grid-cols-1 gap-8 md:gap-12 md:grid-cols-[1.2fr_0.8fr]">
             {/* Interactive Form */}
-            <div className="glass-card p-8 sm:p-10 shadow-lg border border-border/40 bg-card/45 backdrop-blur-md relative overflow-hidden">
+            <div className="glass-card p-5 sm:p-8 shadow-lg border border-border/40 bg-card/45 backdrop-blur-md relative overflow-hidden">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
                   <CheckCircle2 className="text-emerald-500 animate-bounce" size={48} />
@@ -101,17 +101,17 @@ export function ContactSection() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleContactSubmit} className="space-y-6 text-left">
-                  <h3 className="text-xl font-bold text-foreground mb-6">Send a Message</h3>
+                <form onSubmit={handleContactSubmit} className="space-y-5 text-left">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">Send a Message</h3>
 
                   {errorMsg && (
-                    <div className="flex items-center gap-3 rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive animate-fade-in">
+                    <div className="flex items-center gap-3 rounded-xl border border-destructive/20 bg-destructive/10 p-3.5 text-xs sm:text-sm text-destructive animate-fade-in">
                       <AlertCircle size={18} className="shrink-0" />
                       <span>{errorMsg}</span>
                     </div>
                   )}
 
-                  <div className="grid gap-6 md:grid-cols-2">
+                  <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-muted-foreground/80 font-sans">
                         Full Name <span className="text-primary">*</span>
@@ -280,7 +280,7 @@ export function ContactSection() {
       </section>
 
       {/* Pull-quote banner */}
-      <section className="border-t border-border/30 mx-auto max-w-4xl px-6 py-24 text-center relative z-10">
+      <section className="border-t border-border/30 mx-auto max-w-4xl px-6 py-12 md:py-16 text-center relative z-10">
         <Quote className="mx-auto text-primary/15 mb-6" size={48} />
         <blockquote className="font-display text-2xl leading-relaxed text-foreground md:text-3xl italic">
           "The market doesn't care about your vision, it cares about your solution "

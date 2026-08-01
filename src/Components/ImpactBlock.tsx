@@ -76,15 +76,21 @@ const ImpactBlock = ({
   }, [animate, isVisible, metric]);
 
   const sizeClasses = {
-    sm: "px-3 py-2.5 rounded-xl",
-    md: "px-4 py-3.5 rounded-xl",
-    lg: "px-6 py-5 rounded-2xl",
+    sm: "px-2.5 py-1.5 rounded-lg",
+    md: "px-3.5 py-2.5 rounded-xl",
+    lg: "px-5 py-4 rounded-xl",
   };
 
   const metricSizeClasses = {
-    sm: "text-lg",
-    md: "text-2xl",
-    lg: "text-3xl md:text-4xl",
+    sm: "text-sm sm:text-base",
+    md: "text-lg sm:text-xl",
+    lg: "text-2xl sm:text-3xl",
+  };
+
+  const labelSizeClasses = {
+    sm: "text-[10px] leading-tight mt-0.5 opacity-80 font-medium",
+    md: "text-xs mt-1 opacity-75 font-medium",
+    lg: "text-sm mt-1 opacity-80 font-medium",
   };
 
   const variantClasses = {
@@ -103,9 +109,9 @@ const ImpactBlock = ({
     <div
       ref={ref}
       className={cn(
-        "group relative border overflow-hidden",
-        "transition-all duration-500 ease-out",
-        "hover:shadow-lg hover:-translate-y-1",
+        "group relative border overflow-hidden cursor-pointer select-none touch-manipulation",
+        "transition-all duration-300 ease-out",
+        "hover:shadow-md hover:-translate-y-0.5 active:scale-95 active:shadow-sm",
         sizeClasses[size],
         variantClasses[variant],
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
@@ -122,7 +128,7 @@ const ImpactBlock = ({
         )}
       />
 
-      <div className="relative flex items-baseline gap-1.5">
+      <div className="relative flex items-baseline gap-1">
         <span
           className={cn(
             "font-display font-bold tracking-tight",
@@ -134,14 +140,13 @@ const ImpactBlock = ({
           {displayMetric}
         </span>
         {variant !== "neutral" && (
-          <span className="text-xs opacity-60">{iconVariants[variant]}</span>
+          <span className="text-[10px] opacity-60 font-sans">{iconVariants[variant]}</span>
         )}
       </div>
       <div
         className={cn(
-          "text-sm mt-1 opacity-70",
-          "transition-opacity duration-300",
-          "group-hover:opacity-100"
+          labelSizeClasses[size],
+          "transition-opacity duration-300 group-hover:opacity-100"
         )}
       >
         {label}

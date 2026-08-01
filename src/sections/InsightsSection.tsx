@@ -26,6 +26,62 @@ interface PostData {
 
 const STATIC_POSTS: PostData[] = [
   {
+    _id: "static-new-1",
+    author: "Soumen Bhatta",
+    authorTitle: "Founder & Group CEO, Cuatro Labs | Entrepreneur | Growth Architect | Industry Innovator",
+    authorAvatar: portrait,
+    content: "🇮🇳 A New Mission After the Uniform.\n\nHave you taken VRS or recently retired from the Indian Army, Indian Navy, Indian Air Force, CAPF, or other Defence Services?\n\nYour leadership journey doesn't have to end with retirement—it can begin again.\n\nATOMA – India's Salon at Home is building one of India's fastest-growing hyperlocal service platforms, and we are looking for disciplined, mission-driven leaders to spearhead operations across multiple cities.\n\nWe are hiring for:\n🎯 City Managers\n🎯 City Operations Heads\n🎯 Regional Operations Leaders\n\nLocations: Delhi NCR and 40+ cities across India.\n\nWe are particularly looking for:\n- Retired or VRS Defence Personnel\n- Officers from the rank of Captain, Major, Lieutenant Colonel, Colonel (or equivalent ranks in the Navy and Air Force)\n- Professionals with strong leadership, operational planning, people management, and execution capabilities\n\nWhy Defence Veterans?\nBecause building a national organisation requires discipline, integrity, accountability, and the ability to lead teams under pressure—qualities that define our Armed Forces.\n\nIf you are ready for a second innings and want to help build a company with the ambition of becoming India's No. 1 Salon-at-Home platform, we would love to connect with you.\n\n#Hiring #DefenceVeterans #Army #Navy #AirForce #Veterans #VRS #CityManager #Operations #Leadership #Startup #ATOMA #SalonAtHome",
+    timestamp: "2026-07-28T09:00:00Z",
+    likes: 194,
+    commentsCount: 26,
+    shares: 15,
+    postUrl: "https://www.linkedin.com/posts/soumen-bhatta-370122198_activity-7487591273718210560",
+    mediaUrl: portrait,
+    mediaUrls: [portrait],
+    mediaType: "image",
+    tag: "HIRING",
+    title: "A New Mission After the Uniform — Defence Veterans Hiring",
+    readTime: "3 min read"
+  },
+  {
+    _id: "static-new-2",
+    author: "Soumen Bhatta",
+    authorTitle: "Founder & Group CEO, Cuatro Labs | Entrepreneur | Growth Architect | Industry Innovator",
+    authorAvatar: portrait,
+    content: "🚀 Ahmedabad, We're Looking for Leaders Who Want to Build Something Meaningful.\n\nAt ATOMA – India's Salon at Home, we are entering an exciting phase of growth and are looking to strengthen our leadership team with experienced professionals who want to create a lasting impact.\n\nWe are inviting applications from:\n✅ Retired IAS, IPS, IFS, Defence Personnel, PSU Executives, Banking Professionals, and other senior leaders with 30–35+ years of experience as:\n- Advisory Board Members\n- Strategic Mentors\n- Technical Consultants\n\nWe are also looking for professionals who wish to join us full-time in leadership roles across:\n- Marketing & Brand | Technology & IT | Operations & Administration\n- Human Resources | Finance & Accounts | Legal & Compliance\n- Business Expansion & Growth | Supply Chain & Procurement\n\n📍 Location: Ahmedabad (preferred)\n🇮🇳 Mission: Build and scale ATOMA – India's Salon at Home.\n\n#Ahmedabad #Leadership #Hiring #Startup #AdvisoryBoard #Consultant #RetiredProfessionals #Operations #ATOMA #SalonAtHome",
+    timestamp: "2026-07-28T08:30:00Z",
+    likes: 142,
+    commentsCount: 19,
+    shares: 11,
+    postUrl: "https://www.linkedin.com/posts/soumen-bhatta-370122198_activity-7487589906190401538",
+    mediaUrl: portrait,
+    mediaUrls: [portrait],
+    mediaType: "image",
+    tag: "LEADERSHIP",
+    title: "Hiring Advisory & Executive Leaders in Ahmedabad",
+    readTime: "3 min read"
+  },
+  {
+    _id: "static-new-3",
+    author: "Soumen Bhatta",
+    authorTitle: "Founder & Group CEO, Cuatro Labs | Entrepreneur | Growth Architect | Industry Innovator",
+    authorAvatar: portrait,
+    content: "🚀 One Year. Countless Challenges. Unshakable Belief.\n\nToday marks one official year since the beginning of our journey. What started as a vision has grown into a mission—to build a platform that empowers beauty professionals, creates opportunities, and transforms the salon-at-home industry across India.\n\nThere were delays. There were obstacles. There were moments that tested our patience. But every challenge strengthened our resolve.\n\nOn this sacred and auspicious occasion of Bahuda Yatra, with the divine blessings of Lord Jagannath, Lord Balabhadra, and Devi Subhadra, we are humbled and grateful to announce that ATOMA is officially LIVE from today. 🙏✨\n\nThis is not just the launch of an app. It is the beginning of a movement where service professionals earn with dignity and customers experience premium beauty services at home.\n\nWelcome to the future of beauty.\n\n#ATOMA #BahudaYatra #LordJagannath #StartupIndia #BeautyTech #SalonAtHome #Innovation #CuatroLabs #OfficialLaunch",
+    timestamp: "2026-07-25T10:00:00Z",
+    likes: 278,
+    commentsCount: 54,
+    shares: 29,
+    postUrl: "https://www.linkedin.com/posts/soumen-bhatta-370122198_activity-7486345541086334976",
+    mediaUrl: "https://media.licdn.com/dms/image/v2/D4D22AQFnp1VCZnK12w/feedshare-shrink_800/B4DZ8SKrIGI0Ac-/0/1782716216239?e=2147483647&v=beta&t=Xvqzu12QjhR2GjM68BV9yXB-hiJD7uFbs-NVdva8zYw",
+    mediaUrls: [
+      "https://media.licdn.com/dms/image/v2/D4D22AQFnp1VCZnK12w/feedshare-shrink_800/B4DZ8SKrIGI0Ac-/0/1782716216239?e=2147483647&v=beta&t=Xvqzu12QjhR2GjM68BV9yXB-hiJD7uFbs-NVdva8zYw"
+    ],
+    mediaType: "image",
+    tag: "LAUNCH",
+    title: "ATOMA Officially LIVE — One Year Journey & Bahuda Yatra",
+    readTime: "3 min read"
+  },
+  {
     _id: "static-1",
     author: "Soumen Bhatta",
     authorTitle: "Founder & Group CEO, Cuatro Labs | Entrepreneur | Growth Architect | Industry Innovator",
@@ -106,11 +162,29 @@ const STATIC_POSTS: PostData[] = [
     readTime: "3 min read"
   },
   {
+    _id: "static-new-4",
+    author: "Soumen Bhatta",
+    authorTitle: "Founder & Group CEO, Cuatro Labs | Entrepreneur | Growth Architect | Industry Innovator",
+    authorAvatar: portrait,
+    content: "Not every father is called \"Dad.\"\n\nSome are grandfathers. Some are uncles. Some are brothers who stepped up. Some are mentors who believed in us before we believed in ourselves. Some are single mothers carrying both roles. And some are the silent protectors who stood behind us, never asking for recognition.\n\nToday is not just about celebrating fathers by birth. It's about celebrating every person who chose responsibility over comfort, guidance over convenience, and love over obligation.\n\nThe people who taught us resilience. The people who picked us up when we failed. The people who stood guard over our dreams while we were busy chasing them.\n\nFatherhood is not defined by biology. It is defined by presence, sacrifice, and unwavering support.\n\nTo every father, father figure, mentor, guardian, and silent hero—thank you for showing us that strength can be gentle, leadership can be compassionate, and love can be unconditional.\n\nHappy Father's Day ❤️\n\n#FathersDay #FatherFigures #Leadership #Mentorship #Family #Gratitude #Inspiration #InclusiveLeadership",
+    timestamp: "2026-06-21T10:00:00Z",
+    likes: 164,
+    commentsCount: 28,
+    shares: 7,
+    postUrl: "https://www.linkedin.com/posts/soumen-bhatta-370122198_activity-7474181423248175104",
+    mediaUrl: portrait,
+    mediaUrls: [portrait],
+    mediaType: "image",
+    tag: "CULTURE",
+    title: "Father's Day & Inclusive Leadership",
+    readTime: "2 min read"
+  },
+  {
     _id: "static-5",
     author: "Soumen Bhatta",
     authorTitle: "Founder & Group CEO, Cuatro Labs | Entrepreneur | Growth Architect | Industry Innovator",
     authorAvatar: portrait,
-    content: "We are thrilled to share that ATOMA is launching across 40 Indian cities by the end of June! Our mission is to scale our beauty-tech ecosystem and bring trusted salon professionals directly to consumer doorsteps while creating dignified earning opportunities for service professionals across India.\n\n#Atoma #Ahmedabad #StartupIndia #BeautyTech #Hyperlocal",
+    content: "AHMEDABAD WAS JUST THE TRAILER. 🔥\n\nIndia… tighten your seat belts. What you are seeing today is only the beginning of something massive.\n\nATOMA is gearing up to go LIVE across the next 40 cities by June end / July — building one of India’s fastest-growing worker-first beauty service ecosystems.\n\nThis is not a normal startup launch. This is a movement to empower thousands of service professionals, create financial independence, and redefine hyperlocal beauty services in India.\n\nWe are coming stronger. We are coming faster. And we are just getting started.\n\n#Atoma #Ahmedabad #StartupIndia #BeautyTech #Hyperlocal #WorkerFirst #CuatroLabs",
     timestamp: "2026-06-15T10:00:00Z",
     likes: 215,
     commentsCount: 38,
@@ -124,6 +198,24 @@ const STATIC_POSTS: PostData[] = [
     tag: "EXPANSION",
     title: "ATOMA Launches in 40 Indian Cities by June End",
     readTime: "1 min read"
+  },
+  {
+    _id: "static-new-5",
+    author: "Soumen Bhatta",
+    authorTitle: "Founder & Group CEO, Cuatro Labs | Entrepreneur | Growth Architect | Industry Innovator",
+    authorAvatar: portrait,
+    content: "Building ATOMA – India's Salon at Home with Trust Intelligence.\n\nIn the hyperlocal home services ecosystem, technology alone isn't enough; trust is the core foundation. We are disrupting the status quo by combining AI-driven demand matching with rigorous partner protection and customer safety standards.\n\nAs India's growth story unfolds, scaling a marketplace across Bharat requires category creation, digital transformation, and an obsession with customer experience.\n\nWe are building the future of services in India—city by city, professional by professional.\n\n#Atoma #IndiasSalonAtHome #TrustIntelligence #HomeServices #SalonAtHome #FutureOfServices #Bharat #IndiaGrowthStory #BusinessGrowth #DisruptingTheStatusQuo #AI",
+    timestamp: "2026-06-12T11:00:00Z",
+    likes: 185,
+    commentsCount: 22,
+    shares: 10,
+    postUrl: "https://www.linkedin.com/posts/soumen-bhatta-370122198_activity-7471842623524331520",
+    mediaUrl: portrait,
+    mediaUrls: [portrait],
+    mediaType: "image",
+    tag: "VISION",
+    title: "Trust Intelligence & Future of Services in Bharat",
+    readTime: "2 min read"
   },
   {
     _id: "static-6",
@@ -361,7 +453,7 @@ function JournalCard({
   const postReadTime = post.readTime || "3 min read";
 
   return (
-    <div className="glass-card p-6 border border-border/20 shadow-sm relative group hover:border-primary/40 hover:bg-card/40 transition-all duration-300 flex flex-col justify-between text-left">
+    <div className="glass-card p-4 sm:p-6 border border-border/20 shadow-sm relative group hover:border-primary/40 hover:bg-card/40 transition-all duration-300 flex flex-col justify-between text-left">
       <div>
         <div className="flex items-center justify-between gap-3 mb-3 text-[10px] font-semibold tracking-wider font-sans uppercase">
           <span className="text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">
@@ -376,17 +468,17 @@ function JournalCard({
           {postTitle}
         </h4>
 
-        <div className="text-[10px] text-muted-foreground/75 font-mono mb-4">
+        <div className="text-[10px] text-muted-foreground/75 font-mono mb-3 sm:mb-4">
           Published {formatDate(post.timestamp)}
         </div>
 
-        <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line mb-2 font-sans font-normal">
+        <p className="text-xs sm:text-sm text-foreground/90 leading-relaxed whitespace-pre-line mb-2 font-sans font-normal">
           {formatContent(displayContent)}
         </p>
         {isLong && (
           <button
             onClick={() => setExpanded(!expanded)}
-            className="text-primary font-semibold hover:underline text-[11px] cursor-pointer mb-4 block"
+            className="text-primary font-semibold hover:underline text-[11px] cursor-pointer mb-3 block"
           >
             {expanded ? "See less" : "See more"}
           </button>
@@ -401,27 +493,27 @@ function JournalCard({
         )}
       </div>
 
-      <div className="border-t border-border/20 pt-4 mt-2 flex items-center justify-between">
+      <div className="border-t border-border/20 pt-3 sm:pt-4 mt-3 flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
           <button
             onClick={() => onLike(post._id)}
             disabled={isLiked}
             className={cn(
-              "flex items-center gap-1.5 py-1.5 px-3 rounded-full border border-border/30 bg-secondary/30 transition-all duration-300 hover:bg-secondary/50 hover:text-primary cursor-pointer",
+              "flex items-center gap-1.5 py-1 px-2.5 sm:py-1.5 sm:px-3 rounded-full border border-border/30 bg-secondary/30 transition-all duration-300 hover:bg-secondary/50 hover:text-primary cursor-pointer",
               isLiked && "text-primary border-primary/30 bg-primary/5 scale-105"
             )}
           >
             <ThumbsUp size={12} className={isLiked ? "fill-primary stroke-primary" : ""} />
             <span>{isLiked ? "Liked" : "Like"}</span>
           </button>
-          <span className="text-[10px] opacity-75 font-mono ml-1">({post.likes + (isLiked ? 0 : 0)} reactions)</span>
+          <span className="text-[10px] opacity-75 font-mono ml-0.5">({post.likes + (isLiked ? 0 : 0)})</span>
         </div>
 
         <a
           href={post.postUrl || "https://linkedin.com"}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-primary transition-colors duration-300"
+          className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-primary transition-colors duration-300 ml-auto"
         >
           Read Original <ExternalLink size={12} />
         </a>
@@ -502,9 +594,9 @@ export function InsightsSection() {
   const displayPosts = status === "success" && posts ? posts : STATIC_POSTS;
 
   return (
-    <section id="insights" className="relative py-24 md:py-32 bg-background-alt border-b border-border/30">
+    <section id="insights" className="relative py-16 md:py-20 bg-background-alt border-b border-border/30">
       <div className="section-container">
-        <div className="max-w-3xl mb-16 space-y-4 text-left">
+        <div className="max-w-3xl mb-8 sm:mb-16 space-y-3 sm:space-y-4 text-left">
           <span className="eyebrow">Insights &amp; Activity</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Sharing lessons from the startup journey.</h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
@@ -512,7 +604,7 @@ export function InsightsSection() {
           </p>
         </div>
 
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-8 md:gap-12 md:grid-cols-2">
           {/* Startup Journal */}
           <div className="space-y-6 text-left">
             <div className="flex items-center gap-3 border-b border-border/30 pb-4">

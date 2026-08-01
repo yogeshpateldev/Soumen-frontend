@@ -31,21 +31,21 @@ export function AboutSection() {
   return (
     <>
       {/* SECTION 2: ABOUT / BIO */}
-      <section id="about" className="relative py-24 md:py-32 overflow-hidden bg-background">
+      <section id="about" className="relative py-16 md:py-20 overflow-hidden bg-background">
         <div className="absolute inset-0 bg-dot-pattern bg-dot-md opacity-20 pointer-events-none" />
 
         <div className="section-container relative">
-          <div className="grid lg:grid-cols-3 gap-12 text-left">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 text-left">
             {/* Bio Narrative */}
             <div className="lg:col-span-2 space-y-6">
               <span className="eyebrow">The Leadership Story</span>
 
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-bold text-foreground leading-tight">
                 Building systems that empower people.
               </h2>
               <div className="w-12 h-1 bg-gradient-blue rounded-full mt-2" />
 
-              <div className="space-y-5 text-base sm:text-lg text-muted-foreground leading-relaxed pt-4 font-sans font-normal">
+              <div className="space-y-4 sm:space-y-5 text-base sm:text-lg text-muted-foreground leading-relaxed pt-2 sm:pt-4 font-sans font-normal">
                 <p>
                   I didn't start in a boardroom. My career began in supply management and procurement — nearly a decade spent as Head of Purchase, first at Mansarowar Enterprises and later at YesMadam, where I spent over four years mastering the operational backbone of consumer service businesses.
                 </p>
@@ -71,17 +71,17 @@ export function AboutSection() {
             {/* Sidebar for Skills / Competencies */}
             <aside className="lg:col-span-1 space-y-6">
               {/* Skills Card */}
-              <div className="group relative p-6 rounded-2xl overflow-hidden bg-card border border-border/60 transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5">
+              <div className="group relative p-5 sm:p-6 rounded-2xl overflow-hidden bg-card border border-border/60 transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative">
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-4">
+                  <h3 className="font-display text-base sm:text-lg font-semibold text-foreground mb-4">
                     Core Competencies
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1.5 rounded-full text-xs font-semibold bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105"
+                        className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105 active:scale-95 active:bg-primary active:text-white cursor-pointer select-none touch-manipulation"
                       >
                         {skill}
                       </span>
@@ -91,10 +91,10 @@ export function AboutSection() {
               </div>
 
               {/* Project Types Card */}
-              <div className="group relative p-6 rounded-2xl overflow-hidden bg-card border border-border/60 transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="group relative p-5 sm:p-6 rounded-2xl overflow-hidden bg-card border border-border/60 transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 active:scale-[0.98] cursor-pointer select-none touch-manipulation">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500" />
                 <div className="relative">
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-4">
+                  <h3 className="font-display text-base sm:text-lg font-semibold text-foreground mb-4">
                     Types of Initiatives
                   </h3>
                   <ul className="space-y-3">
@@ -118,23 +118,23 @@ export function AboutSection() {
       </section>
 
       {/* SECTION: LEADERSHIP PHILOSOPHY */}
-      <section className="bg-background py-20 border-t border-border/20 relative z-10 text-left">
+      <section className="bg-background py-8 sm:py-20 border-t border-border/20 relative z-10 text-left">
         <div className="section-container">
           <span className="eyebrow text-primary">Leadership Philosophy</span>
-          <h2 className="mt-4 max-w-2xl text-2xl sm:text-3xl font-bold text-foreground leading-tight">
+          <h2 className="mt-2 sm:mt-3 max-w-2xl text-xl sm:text-3xl font-bold text-foreground leading-tight">
             In My Words: Convictions that shape how I build.
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="mt-4 sm:mt-10 grid gap-3 sm:gap-6 grid-cols-1 sm:grid-cols-2">
             {philosophyQuotes.map((quote, i) => (
               <div
                 key={i}
-                className="glass-card p-6 shadow-sm hover:border-primary/40 transition-all duration-300 group hover:-translate-y-1 relative"
+                tabIndex={0}
+                className="glass-card p-3.5 sm:p-6 shadow-sm hover:border-primary/40 active:scale-[0.98] active:border-primary/60 active:bg-primary/10 transition-all duration-200 group hover:-translate-y-1 relative cursor-pointer select-none touch-manipulation focus:outline-none focus:border-primary/50"
               >
                 <Quote
-                  className="absolute top-4 right-4 text-primary/10 group-hover:text-primary/20 transition-colors duration-300"
-                  size={32}
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 text-primary/10 group-hover:text-primary/20 group-active:text-primary/30 transition-colors duration-300 shrink-0 w-5 h-5 sm:w-7 sm:h-7"
                 />
-                <p className="text-sm sm:text-base text-foreground leading-relaxed italic pr-8">
+                <p className="text-xs sm:text-base text-foreground leading-relaxed italic pr-5 sm:pr-8">
                   "{quote}"
                 </p>
               </div>

@@ -134,7 +134,7 @@ export const projects: Project[] = [
       "Built deep expertise in purchasing, vendor strategy, and procurement management, establishing the core commercial foundation for future venture leadership.",
     metrics: [
       { value: "4+ Years", label: "Head of Purchase", variant: "neutral" },
-      { value: "Procurement", label: "Core Focus", variant: "positive" },
+      { value: "Purchasing", label: "Core Focus", variant: "positive" },
       { value: "Beauty & Wellness", label: "Industry Category", variant: "neutral" },
     ],
   },
@@ -158,7 +158,7 @@ export const projects: Project[] = [
       "Gained six years of hands-on procurement and supply management mastery, forming the initial operational grounding of my career.",
     metrics: [
       { value: "6 Years", label: "Head of Purchase", variant: "neutral" },
-      { value: "Procurement", label: "Core Focus", variant: "positive" },
+      { value: "Purchasing", label: "Core Focus", variant: "positive" },
       { value: "2013–2019", label: "Tenure", variant: "neutral" },
     ],
   },
