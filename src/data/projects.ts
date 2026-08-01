@@ -22,7 +22,7 @@ export const projects: Project[] = [
     description:
       "A hyperlocal beauty & wellness platform bringing trusted salon professionals directly to customers' homes under a worker-first model.",
     context:
-      "Launched in Gandhinagar and Ahmedabad, Atoma is expanding rapidly with the goal of reaching 40 cities. The venture addresses the high-churn gig economy by offering a dignified, secure, and long-term career path for service professionals.",
+      "Launched in Gandhinagar and Ahmedabad, Atoma is expanding rapidly with the goal of reaching 100+ cities. The venture addresses the high-churn gig economy by offering a dignified, secure, and long-term career path for service professionals.",
     strategy:
       "Create a worker-first ecosystem: instead of gig-economy exploitation, build loyalty and exceptional customer service by securing health coverage, accidental protection, and earnings growth pathways for all service professionals.",
     execution: [
@@ -31,14 +31,14 @@ export const projects: Project[] = [
       "Comprehensive health & accidental coverage",
       "Structured skill empowerment and earning growth pathways",
       "Dignified, respected, long-term work replacing traditional gig-economy models",
-      "Hyperlocal density play in key cities of Gujarat, expanding to 40 cities pan-India",
+      "Hyperlocal density play in key cities of Gujarat, expanding to 50+ cities pan-India",
     ],
     impact:
       "Atoma is redefining beauty & wellness services in India by proving that a worker-first model leads to higher customer retention, consistent service quality, and lower partner churn.",
     metrics: [
       { value: "0%", label: "Partner Commission", variant: "positive" },
       { value: "Day 1", label: "Insurance Protection", variant: "positive" },
-      { value: "40+", label: "Target Cities", variant: "neutral" },
+      { value: "50+", label: "Target Cities", variant: "neutral" },
     ],
   },
   {
@@ -116,26 +116,50 @@ export const projects: Project[] = [
   },
   {
     slug: "yesmadam",
-    title: "YesMadam — Operational Grounding",
-    category: "Operations & Procurement",
+    title: "YesMadam — Head of Purchase",
+    category: "Purchasing & Procurement",
     description:
-      "Led purchasing and vendor strategy for over four years at YesMadam, mastering the procurement and supply chain backbone of consumer home services.",
+      "Led purchasing, procurement, and vendor strategy for over four years at YesMadam as Head of Purchase.",
     context:
-      "Between 2019 and 2023, served as Head of Purchase for YesMadam, one of India's leading home services platforms, managing logistics, product sourcing, and supply chains.",
+      "Between 2019 and 2023, served as Head of Purchase for YesMadam, one of India's leading beauty & home services platforms, driving procurement, vendor negotiation, and product sourcing strategy.",
     strategy:
-      "Optimize supply costs, establish direct relationships with key vendors, and build a lean, reliable supply chain that feeds thousands of field service professionals daily.",
+      "Optimize purchasing costs, establish direct vendor partnerships, negotiate commercial terms, and streamline raw material & product procurement.",
     execution: [
-      "Managed end-to-end procurement and purchase operations for 4+ years",
-      "Negotiated large-scale supplier contracts, cutting supply chain overheads",
-      "Created structured inventory distribution systems for service partners",
-      "Learned the operational nuances of the beauty and home service category",
+      "Led pan-India purchasing operations and procurement strategy for 4+ years",
+      "Negotiated large-scale supplier contracts and commercial terms with key vendors",
+      "Managed product sourcing and inventory procurement frameworks for service partners",
+      "Drove cost efficiency and material procurement standards across beauty & wellness categories",
     ],
     impact:
-      "Mastered the operational backbone and supply constraints of home service marketplaces, which later became the direct inspiration for building Atoma.",
+      "Built deep expertise in purchasing, vendor strategy, and procurement management, establishing the core commercial foundation for future venture leadership.",
     metrics: [
       { value: "4+ Years", label: "Head of Purchase", variant: "neutral" },
-      { value: "Lean", label: "Supply Chain", variant: "positive" },
-      { value: "Home Services", label: "Industry Category", variant: "neutral" },
+      { value: "Procurement", label: "Core Focus", variant: "positive" },
+      { value: "Beauty & Wellness", label: "Industry Category", variant: "neutral" },
+    ],
+  },
+  {
+    slug: "mansarowar-enterprises",
+    title: "Mansarowar Enterprises — Head of Purchase",
+    category: "Purchasing & Procurement",
+    description:
+      "Spent nearly six years as Head of Purchase, building foundational discipline in procurement, supply management, and vendor negotiation.",
+    context:
+      "Between 2013 and 2019, served as Head of Purchase at Mansarowar Enterprises, managing large-scale material procurement and vendor relationships.",
+    strategy:
+      "Establish structured purchasing workflows, manage vendor contracting, and optimize material sourcing costs across operations.",
+    execution: [
+      "Directed purchase and material management operations for nearly 6 years",
+      "Built core vendor networks and negotiated procurement contracts",
+      "Optimized supply schedules and material cost structures",
+      "Established foundational purchasing discipline that grounded future leadership roles",
+    ],
+    impact:
+      "Gained six years of hands-on procurement and supply management mastery, forming the initial operational grounding of my career.",
+    metrics: [
+      { value: "6 Years", label: "Head of Purchase", variant: "neutral" },
+      { value: "Procurement", label: "Core Focus", variant: "positive" },
+      { value: "2013–2019", label: "Tenure", variant: "neutral" },
     ],
   },
 ];
