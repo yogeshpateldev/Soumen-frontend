@@ -313,6 +313,21 @@ function formatDate(dateString: string) {
   }
 }
 
+function IndiaFlag() {
+  return (
+    <span className="inline-flex items-center gap-1.5 align-middle mx-1 font-sans select-none" title="India (IN)">
+      <svg width="22" height="15" viewBox="0 0 30 20" className="rounded-xs shadow-xs border border-white/20 inline-block align-middle overflow-hidden">
+        <rect width="30" height="6.67" fill="#FF9933" />
+        <rect y="6.67" width="30" height="6.67" fill="#FFFFFF" />
+        <rect y="13.33" width="30" height="6.67" fill="#138808" />
+        <circle cx="15" cy="10" r="2.8" fill="none" stroke="#000080" strokeWidth="0.6" />
+        <circle cx="15" cy="10" r="0.5" fill="#000080" />
+      </svg>
+      <span className="text-[11px] font-bold px-1.5 py-0.2 bg-amber-500/10 text-amber-400 border border-amber-500/30 rounded">IN</span>
+    </span>
+  );
+}
+
 function formatContent(text: string) {
   const parts = text.split(/(\s+|\n)/);
   return parts.map((part, index) => {
@@ -320,6 +335,19 @@ function formatContent(text: string) {
       return (
         <span key={index} className="text-primary font-semibold hover:underline cursor-pointer">
           {part}
+        </span>
+      );
+    }
+    if (part.includes("🇮🇳") || part.includes("\uFFFD")) {
+      const subParts = part.split(/(🇮🇳|\uFFFD)/g);
+      return (
+        <span key={index}>
+          {subParts.map((sub, i) => {
+            if (sub === "🇮🇳" || sub === "\uFFFD") {
+              return <IndiaFlag key={i} />;
+            }
+            return sub;
+          })}
         </span>
       );
     }
