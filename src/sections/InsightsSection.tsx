@@ -328,6 +328,19 @@ function IndiaFlag() {
   );
 }
 
+function formatTitle(title: string) {
+  if (title.includes("🇮🇳") || title.includes("\uFFFD") || title.startsWith("??") || title.toLowerCase().includes("a new mission")) {
+    const cleanTitle = title.replace(/^(🇮🇳|\uFFFD|\?\?\s*)/, "").trim();
+    return (
+      <span className="inline-flex items-center gap-1.5 flex-wrap">
+        <IndiaFlag />
+        <span>{cleanTitle}</span>
+      </span>
+    );
+  }
+  return title;
+}
+
 function formatContent(text: string) {
   const parts = text.split(/(\s+|\n)/);
   return parts.map((part, index) => {
@@ -335,19 +348,6 @@ function formatContent(text: string) {
       return (
         <span key={index} className="text-primary font-semibold hover:underline cursor-pointer">
           {part}
-        </span>
-      );
-    }
-    if (part.includes("🇮🇳") || part.includes("\uFFFD")) {
-      const subParts = part.split(/(🇮🇳|\uFFFD)/g);
-      return (
-        <span key={index}>
-          {subParts.map((sub, i) => {
-            if (sub === "🇮🇳" || sub === "\uFFFD") {
-              return <IndiaFlag key={i} />;
-            }
-            return sub;
-          })}
         </span>
       );
     }
@@ -493,7 +493,7 @@ function JournalCard({
         </div>
 
         <h4 className="text-base sm:text-lg font-display font-semibold text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-300">
-          {postTitle}
+          {formatTitle(postTitle)}
         </h4>
 
         <div className="text-[10px] text-muted-foreground/75 font-mono mb-3 sm:mb-4">
