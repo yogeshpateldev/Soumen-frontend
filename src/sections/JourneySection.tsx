@@ -60,10 +60,10 @@ const milestones: Milestone[] = [
 
 export function JourneySection() {
   return (
-    <section id="journey" className="relative py-16 md:py-20 bg-background border-b border-border/30 overflow-hidden">
+    <section id="journey" className="relative py-16 md:py-20 bg-gradient-to-b from-[#eef8fe] via-[#f5fbff] to-[#ffffff] border-b border-border/20 overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#bae6fd]/30 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-10 -right-20 w-96 h-96 bg-[#e0f2fe]/40 rounded-full blur-[110px] pointer-events-none" />
 
       <div className="section-container relative">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">

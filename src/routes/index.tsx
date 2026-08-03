@@ -7,7 +7,7 @@ import ContactSection from "../sections/ContactSection";
 
 export function Index() {
   return (
-    <div className="relative min-h-screen overflow-hidden pt-16 md:pt-20">
+    <div className="relative min-h-screen overflow-hidden">
       <HeroSection />
       <AboutSection />
       <VenturesSection />

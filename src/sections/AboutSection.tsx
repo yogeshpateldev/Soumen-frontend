@@ -31,7 +31,9 @@ export function AboutSection() {
   return (
     <>
       {/* SECTION 2: ABOUT / BIO */}
-      <section id="about" className="relative py-16 md:py-20 overflow-hidden bg-background">
+      <section id="about" className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-b from-[#eef8fe] via-[#f5fbff] to-[#ffffff]">
+        <div className="absolute top-10 -right-20 w-96 h-96 bg-[#bae6fd]/30 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-10 -left-20 w-80 h-80 bg-[#e0f2fe]/40 rounded-full blur-[90px] pointer-events-none" />
         <div className="absolute inset-0 bg-dot-pattern bg-dot-md opacity-20 pointer-events-none" />
 
         <div className="section-container relative">
@@ -118,7 +120,7 @@ export function AboutSection() {
       </section>
 
       {/* SECTION: LEADERSHIP PHILOSOPHY */}
-      <section className="bg-background py-8 sm:py-20 border-t border-border/20 relative z-10 text-left">
+      <section className="bg-gradient-to-b from-[#ffffff] to-[#eef8fe]/50 py-8 sm:py-20 border-t border-border/20 relative z-10 text-left">
         <div className="section-container">
           <span className="eyebrow text-primary">Leadership Philosophy</span>
           <h2 className="mt-2 sm:mt-3 max-w-2xl text-xl sm:text-3xl font-bold text-foreground leading-tight">

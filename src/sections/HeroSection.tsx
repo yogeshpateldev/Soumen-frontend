@@ -11,16 +11,16 @@ const stats = [
 
 export function HeroSection() {
   return (
-    <>
-      {/* SECTION 1: HERO */}
-      <section className="relative overflow-hidden bg-grid-pattern py-16 md:py-20 border-b border-border/30">
-        {/* Background blobs */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
-        <div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "2s" }}
-        />
+    <div className="relative overflow-hidden bg-blurry-light-blue">
+      {/* Exact Diagonal Cyan Wave Background matching reference image */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute -top-32 -right-32 w-[70rem] h-[38rem] bg-gradient-to-l from-[#38bdf8]/80 via-[#67e8f9]/55 to-transparent -rotate-[24deg] rounded-[100%] blur-[80px]" />
+        <div className="absolute -top-36 -left-20 w-[55rem] h-[30rem] bg-gradient-to-r from-[#7dd3fc]/65 via-[#bae6fd]/45 to-transparent -rotate-[16deg] rounded-[100%] blur-[90px]" />
+        <div className="absolute -bottom-24 right-10 w-[60rem] h-[32rem] bg-gradient-to-l from-[#38bdf8]/45 via-[#e0f2fe]/50 to-transparent -rotate-[18deg] rounded-[100%] blur-[100px]" />
+      </div>
 
+      {/* SECTION 1: HERO */}
+      <section className="relative z-10 pt-24 pb-16 md:pt-28 md:pb-20">
         <div className="section-container relative">
           <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-4 sm:gap-8 md:gap-12 items-center">
             <div className="space-y-3.5 sm:space-y-6 text-left">
@@ -138,7 +138,7 @@ export function HeroSection() {
       </section>
 
       {/* Stats Section */}
-      <section className="border-b border-border/30 bg-background/30 backdrop-blur-sm relative z-10 overflow-hidden py-4 md:py-0">
+      <section className="relative z-10 overflow-hidden py-4 md:py-0">
         {/* Desktop View: Original 4-Column Grid */}
         <div className="hidden md:grid grid-cols-4 gap-4 px-4 py-8 sm:px-6 mx-auto max-w-6xl">
           {stats.map((s) => (
@@ -158,8 +158,8 @@ export function HeroSection() {
 
         {/* Mobile View: Single Line Ticker */}
         <div className="md:hidden relative w-full overflow-hidden flex items-center py-1">
-          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-sky-100/50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-sky-100/50 to-transparent z-10 pointer-events-none" />
 
           <div className="flex gap-2.5 animate-marquee hover:[animation-play-state:paused] shrink-0 min-w-full text-left">
             {[...stats, ...stats, ...stats, ...stats].map((s, idx) => (
@@ -177,8 +177,11 @@ export function HeroSection() {
             ))}
           </div>
         </div>
+
+        {/* Smooth Transition Fade Overlay to About Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent via-[#cdedfd]/40 to-[#eef8fe] z-10 pointer-events-none" />
       </section>
-    </>
+    </div>
   );
 }
 
